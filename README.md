@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+## Types of Hooks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. UseState
+2. UseEffect
+3. UseContext
+4. UseRef
+5. UseReducer
+6. UseLayOutEffect
+7. UseMemo
+8. UseCallBack
+9. CustomHooks
 
-## Available Scripts
+## What is Hooks?
 
-In the project directory, you can run:
+Hooks are the functions to use some react features in functional components.
+InOther words, Hooks are the functions that make functional components work like class component.
 
-### `npm start`
+1. what is usestate ?
+   UseState Hook is a function to add State in Functional Component.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+.... What is State?
+State is nothing but just values of variable of your component.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. what is UseEffect?
 
-### `npm test`
+UseEffect is used to perfrom side effect in our component.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+... What is SideEffect?
 
-### `npm run build`
+sideEffects are actions which performed with outside the world
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+... Common sideEffects
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Fetching data from Api
+updating the Dom document & Window
+Timer Function setTimeOut & Set Interval
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+useEffect Model
 
-### `npm run eject`
+useEffect (callback, dependencies) callback are what to run and dependencies are when to run
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+... Variation of useEffect
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+UseEffect without dependencies
+UseEffect with empty array
+UseEffect with variables
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. What is UseContext ?
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+UseContext Hook is used to manage global data in react application
 
-## Learn More
+- Global State
+- Themes
+- Services
+- User Settings
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+usecontext is used for avoid props drilling we can able to use data any where on child component with out using propdrill by using useContext.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+... How to create Context
 
-### Code Splitting
+Create Context requires 3 simple steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. creating the context
+2. providing the context
+3. consuming the context
 
-### Analyzing the Bundle Size
+4. What is UseRef ?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+... UseRef allows us to access DOM elements
 
-### Making a Progressive Web App
+... For creating mutable variables which will not re-render the component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+5. What is Usereducer ?
 
-### Advanced Configuration
+UseReducer is used to manage complex state in react application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+6. useLayout Effect ?
 
-### Deployment
+useLayout Effect works exactly as the same as useEffect Also same syntax. But the difference is when its run UseEffect runs after the Dom is printed on the browser But useLayout is run before the Dom is printed on the browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+whenever we want to run code before The dom is printed like calculate
 
-### `npm run build` fails to minify
+Height,
+Width,
+Anything related to layout we use UseLayoutEffect.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+It also run synchronously.
+
+The most common use of useLayout is to get the dimension of the layout so it is called useLayout Effect.
+
+7. What is UseMemo ?
+
+useMemo hook is used to apply Memoization in React.
+
+.. what is Memoization ?
+
+Memoization is a technique for improving the performance of code.
+
+it is useful to avoid expensive calculations on every render when the returned value is not change.
+
+// we perform all side effects in useEffect hook.
+// All expensive Functions, calculation in useMemo hook
+
+8. What is UseCallback?
+
+UseCallback is same as useMemo Usecallback is used to return memoize function while usememo returns memoize value. which improves performabce of applicaion.
